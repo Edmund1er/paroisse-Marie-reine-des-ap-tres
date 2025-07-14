@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demande de Messe - Paroisse Marie Reine des Apôtres</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-demande-messe">
+    <header>
+      <div class="header-content">
+        <div class="logo-title">
+          <img src="images/logo-eglise.jpg" alt="Logo Église" class="logo" />
+          <h1>PAROISSE MARIE REINE DES APÔTRES</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="a-propos.html">À PROPOS</a></li>
+            <li><a href="horaire.html">HORAIRES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-page">
+      <h2>DEMANDE DE MESSE</h2>
+      <p>
+        Pour demander une intention de messe, veuillez remplir le formulaire
+        ci-dessous. Votre demande sera transmise à notre paroisse.
+      </p>
+      <form class="demande-messe-form">
+        <label for="intention">Intention de la Messe :</label>
+        <textarea id="intention" name="intention" rows="5" required></textarea>
+
+        <label for="date-souhaitee">Date souhaitée (optionnel) :</label>
+        <input type="date" id="date-souhaitee" name="date-souhaitee" />
+
+        <label for="nom-demandeur">Votre Nom :</label>
+        <input type="text" id="nom-demandeur" name="nom-demandeur" required />
+
+        <label for="email-demandeur">Votre Email :</label>
+        <input type="email" id="email-demandeur" name="email-demandeur" required />
+
+        <button type="submit">Envoyer la Demande</button>
+      </form>
+      <p>
+        Un membre de la paroisse vous contactera pour confirmer votre demande
+        et discuter des modalités.
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Paroisse Marie Reine des Apôtres</p>
+    </footer>
+  </body>
+</html>

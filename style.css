@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  color: #333; /* Couleur de texte par default plus foncée pour le body, mais sera surchargée */
+  color: #333; /* Couleur de texte par défaut plus foncée pour le body, mais sera surchargée */
   background-color: #f4f4f4; /* Couleur de fond légère */
 }
 
@@ -158,6 +158,7 @@ nav a.active { /* 'active' si on veut surligner la page actuelle */
   justify-content: center;
   gap: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* Important pour les liens transformés en blocs */
 }
 
 .feature-item:hover {
@@ -249,8 +250,80 @@ footer {
   z-index: -1; /* Place l'overlay derrière le contenu */
 }
 
+/* NOUVEAUX STYLES POUR LES PAGES DE FONCTIONNALITÉS */
+.page-demande-messe {
+  background-image: url("images/fond-demande-messe.png"); /* Crée cette image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page-demande-messe::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
 
-/* MODIFICATIONS POUR RENDRE LES POLICES BLANCHES SUR HORAIRE ET CONTACT */
+.page-services {
+  background-image: url("images/fond-services.png"); /* Crée cette image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page-services::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.page-evenements {
+  background-image: url("images/fond-evenements.png"); /* Crée cette image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page-evenements::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.page-don {
+  background-image: url("images/fond-don.png"); /* Crée cette image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page-don::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+
 /* Styles pour le contenu principal des pages intérieures */
 .content-page {
   padding: 40px 20px; /* Augmente le padding */
@@ -365,6 +438,168 @@ footer {
   background-color: #0056b3; /* Bleu plus foncé au survol */
 }
 
+/* Styles pour les formulaires des nouvelles pages (Demande de Messe) */
+.demande-messe-form label {
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.demande-messe-form input[type="text"],
+.demande-messe-form input[type="email"],
+.demande-messe-form input[type="date"],
+.demande-messe-form textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.demande-messe-form input[type="text"]::placeholder,
+.demande-messe-form input[type="email"]::placeholder,
+.demande-messe-form input[type="date"]::placeholder,
+.demande-messe-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.demande-messe-form input[type="text"]:focus,
+.demande-messe-form input[type="email"]:focus,
+.demande-messe-form input[type="date"]:focus,
+.demande-messe-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.demande-messe-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.demande-messe-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles pour la liste des services */
+.services-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.services-list ul li {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  border-left: 5px solid #007bff;
+  color: white;
+}
+
+.services-list h3 {
+  color: #007bff;
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Styles pour la liste des événements */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.event-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #007bff;
+  text-align: left;
+  color: white;
+}
+
+.event-item h3 {
+  color: #007bff;
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.event-item p {
+  margin-bottom: 5px;
+}
+
+.event-item strong {
+  color: #00aaff; /* Couleur légèrement différente pour les dates/lieux */
+}
+
+/* Styles pour la page de don */
+.donation-options {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.option-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 5px solid #007bff;
+  text-align: left;
+  color: white;
+}
+
+.option-item h4 {
+  color: #007bff;
+  margin-top: 0;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.option-item ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.option-item ul li {
+  margin-bottom: 5px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #f0ad4e; /* Couleur orange pour le bouton secondaire */
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #ec971f; /* Orange plus foncé au survol */
+}
+
+
 /* Responsive Design (pour les petits écrans) */
 @media (max-width: 768px) {
   header {
@@ -403,5 +638,10 @@ footer {
   .feature-item {
     width: 80%; /* Prend plus de largeur sur mobile */
     max-width: 300px;
+  }
+
+  .content-page {
+    margin: 20px auto;
+    padding: 20px;
   }
 }
