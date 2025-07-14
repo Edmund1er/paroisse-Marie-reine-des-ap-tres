@@ -1,0 +1,407 @@
+/* Styles généraux pour toutes les pages */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police plus moderne */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333; /* Couleur de texte par default plus foncée pour le body, mais sera surchargée */
+  background-color: #f4f4f4; /* Couleur de fond légère */
+}
+
+/* Styles pour l'en-tête (Header) */
+header {
+  background-color: #f8f8f8; /* Fond clair pour l'en-tête */
+  padding: 10px 40px; /* Plus de padding sur les côtés */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  display: flex;
+  justify-content: center; /* Centre le contenu de l'en-tête */
+  align-items: center;
+  position: relative; /* Pour le positionnement des éléments internes */
+  z-index: 100; /* Assure que l'en-tête est au-dessus du contenu */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Pour espacer logo/titre et navigation */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du contenu de l'en-tête */
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espace entre le logo et le titre */
+}
+
+.logo {
+  height: 50px; /* Taille du logo */
+}
+
+header h1 {
+  font-size: 1.2em; /* Taille du titre de la paroisse */
+  color: #3e4e5e; /* Couleur foncée */
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Important pour enlever les marges par défaut */
+  display: flex;
+  gap: 25px; /* Espace entre les liens de navigation */
+}
+
+nav a {
+  color: #3e4e5e; /* Couleur des liens de navigation */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: all 0.3s ease; /* Transition douce pour l'effet hover */
+}
+
+nav a:hover,
+nav a.active { /* 'active' si on veut surligner la page actuelle */
+  color: #007bff; /* Couleur au survol ou si lien actif */
+  background-color: rgba(0, 0, 0, 0.05); /* Légère couleur de fond au survol */
+  border-radius: 5px;
+}
+
+
+/* Section Héro (Bienvenue!) */
+.hero-section {
+  position: relative;
+  height: 600px; /* Hauteur de la section héro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; /* Texte blanc sur l'image de fond */
+  padding: 20px;
+  background-image: url("images/fond-index.png"); /* Image de fond de la page d'accueil */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay pour l'image de fond */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Voile sombre semi-transparent */
+  z-index: 1; /* Place l'overlay entre l'image et le contenu */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* S'assure que le contenu est au-dessus de l'overlay */
+  max-width: 800px;
+}
+
+.hero-content h2 {
+  font-size: 4em; /* Très grande taille pour "BIENVENUE!" */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour la lisibilité */
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #007bff; /* Couleur bleue pour le bouton */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Section des 4 blocs de fonctionnalités */
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espace entre les blocs */
+  margin-top: -100px; /* Fait remonter les blocs sur la section hero */
+  position: relative;
+  z-index: 5; /* Assure que les blocs sont au-dessus de la section hero */
+  padding: 0 20px; /* Padding pour les petits écrans */
+  flex-wrap: wrap; /* Permet aux blocs de passer à la ligne sur petits écrans */
+}
+
+.feature-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+  padding: 30px 20px;
+  text-align: center;
+  width: 220px; /* Largeur fixe pour chaque bloc */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px); /* Effet de soulèvement au survol */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item i {
+  font-size: 3em; /* Taille des icônes */
+  color: #007bff; /* Couleur des icônes */
+}
+
+.feature-item h3 {
+  font-size: 1.2em;
+  color: #3e4e5e;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Styles pour le pied de page (Footer) */
+footer {
+  background-color: #3e4e5e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px; /* Plus d'espace au-dessus du footer */
+}
+
+/* Styles spécifiques pour les images de fond de chaque page */
+/* Ces styles seront appliqués si tu retires le background-image du .hero-section
+   et que tu utilises une page sans hero section principale */
+
+.page-index {
+  /* L'image de fond pour l'index est gérée par .hero-section */
+}
+
+.page-accueil {
+  background-image: url("images/fond-accueil.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Pour que l'image ne bouge pas au scroll */
+}
+.page-accueil::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Un voile sombre semi-transparent */
+  z-index: -1; /* Place l'overlay derrière le contenu */
+}
+
+
+.page-horaire {
+  background-image: url("images/fond-horaire.png"); /* Utilise ton image fond-horaire.jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page-horaire::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Un voile sombre semi-transparent */
+  z-index: -1; /* Place l'overlay derrière le contenu */
+}
+
+.page-contact {
+  background-image: url("images/fond-contact.jpg"); /* Utilise ton image fond-contact.jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.page-contact::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Un voile sombre semi-transparent */
+  z-index: -1; /* Place l'overlay derrière le contenu */
+}
+
+
+/* MODIFICATIONS POUR RENDRE LES POLICES BLANCHES SUR HORAIRE ET CONTACT */
+/* Styles pour le contenu principal des pages intérieures */
+.content-page {
+  padding: 40px 20px; /* Augmente le padding */
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond plus sombre pour le contenu */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  color: white; /* Texte blanc par défaut pour le contenu de ces pages */
+}
+
+.content-page h2 {
+  color: white; /* Assure que le titre H2 est blanc */
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Styles spécifiques pour la page Horaires */
+.page-horaire .content-page ul {
+  list-style: none; /* Enlève les puces par défaut */
+  padding: 0;
+  margin: 20px 0;
+  text-align: left; /* Alignement du texte à gauche */
+}
+
+.page-horaire .content-page ul li {
+  background-color: rgba(255, 255, 255, 0.1); /* Léger fond pour chaque élément de liste */
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  border-left: 5px solid #007bff; /* Bordure colorée à gauche */
+  color: white; /* Spécifiquement pour les items de liste */
+}
+
+.page-horaire .content-page h3 {
+  color: #007bff; /* Couleur pour les sous-titres (ex: Messes Dominicales) */
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.page-horaire .content-page p {
+  font-size: 1.1em;
+  margin-top: 20px;
+  line-height: 1.8;
+  color: white; /* Spécifiquement pour les paragraphes */
+}
+
+
+/* Styles spécifiques pour la page Contact */
+.page-contact .contact-info p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: white; /* Spécifiquement pour les paragraphes d'info contact */
+}
+
+.page-contact .contact-info strong {
+  color: #007bff; /* Couleur pour les labels (Adresse, Téléphone) */
+}
+
+.page-contact .contact-form label {
+  color: white; /* Labels du formulaire en blanc */
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: left; /* Alignement des labels */
+}
+
+.page-contact .contact-form input[type="text"],
+.page-contact .contact-form input[type="email"],
+.page-contact .contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour les champs */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure légère */
+  color: white; /* Texte saisi en blanc */
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.page-contact .contact-form input[type="text"]::placeholder,
+.page-contact .contact-form input[type="email"]::placeholder,
+.page-contact .contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Couleur du placeholder en blanc léger */
+}
+
+.page-contact .contact-form input[type="text"]:focus,
+.page-contact .contact-form input[type="email"]:focus,
+.page-contact .contact-form textarea:focus {
+  outline: none;
+  border-color: #007bff; /* Bordure bleue au focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.page-contact .contact-form button {
+  background-color: #007bff; /* Bouton bleu */
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.page-contact .contact-form button:hover {
+  background-color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+/* Responsive Design (pour les petits écrans) */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .header-content {
+    flex-direction: column; /* Empile les éléments de l'en-tête */
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column; /* Empile les liens de navigation */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero-section {
+    height: 400px;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1.2em;
+  }
+
+  .features-grid {
+    flex-direction: column; /* Empile les blocs sur mobile */
+    align-items: center;
+    margin-top: -50px; /* Réajuste la marge */
+  }
+
+  .feature-item {
+    width: 80%; /* Prend plus de largeur sur mobile */
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Paroisse Marie Reine des Apôtres</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-contact">
+    <header>
+      <div class="header-content">
+        <div class="logo-title">
+          <img src="images/logo-eglise.png" alt="Logo Église" class="logo" />
+          <h1>PAROISSE MARIE REINE DES APÔTRES</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="accueil.html">À PROPOS</a></li>
+            <li><a href="horaire.html">HORAIRES</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-page">
+      <h2>CONTACTEZ-NOUS</h2>
+      <div class="contact-info">
+        <p><strong>Adresse :</strong> a coté de l'EPP Vakpossito non loin du chateau d'eau , Lomé, Togo</p>
+        <p><strong>Téléphone :</strong> +228 90 00 00 00</p>
+        <p><strong>Email :</strong> contact@paroisserma.org</p>
+        <p>
+          Pour toute question ou demande spécifique, veuillez utiliser le
+          formulaire ci-dessous ou nous contacter directement.
+        </p>
+      </div>
+      <form class="contact-form">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Sujet :</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">ENVOYER LE MESSAGE</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Paroisse Marie Reine des Apôtres</p>
+    </footer>
+  </body>
+</html>
